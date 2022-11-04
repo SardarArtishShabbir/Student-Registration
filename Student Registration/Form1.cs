@@ -21,6 +21,8 @@ namespace Student_Registration
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'registerStudentDataSet.tbl_student' table. You can move, or remove it, as needed.
+            this.tbl_studentTableAdapter.Fill(this.registerStudentDataSet.tbl_student);
 
         }
 
@@ -33,6 +35,12 @@ namespace Student_Registration
             cmd.ExecuteNonQuery();
             MessageBox.Show("Record saved Sucessfull!", "Alert", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             Helper.Clear(this);
+            this.tbl_studentTableAdapter.Fill(this.registerStudentDataSet.tbl_student);
+        }
+
+        private void dgv_Student_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }

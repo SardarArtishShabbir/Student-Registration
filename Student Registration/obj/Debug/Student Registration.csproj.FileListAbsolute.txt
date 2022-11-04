@@ -9,3 +9,4 @@ C:\Users\STAR COMPUTER\source\repos\Student Registration\Student Registration\ob
 C:\Users\STAR COMPUTER\source\repos\Student Registration\Student Registration\obj\Debug\Student Registration.csproj.CoreCompileInputs.cache
 C:\Users\STAR COMPUTER\source\repos\Student Registration\Student Registration\obj\Debug\Student Registration.exe
 C:\Users\STAR COMPUTER\source\repos\Student Registration\Student Registration\obj\Debug\Student Registration.pdb
+C:\Users\STAR COMPUTER\source\repos\Student Registration\Student Registration\obj\Debug\Student_Registration.EditStudent.resources
