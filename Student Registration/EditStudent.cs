@@ -30,7 +30,7 @@ namespace Student_Registration
 
         private void cmb_regID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string Query = "SELECT * from tbl_student WHERE Registration ID= '"+cmb_regID.Text+"' ";
+            string Query = "SELECT * from tbl_student WHERE [Registration ID]= '"+cmb_regID.Text+"' ";
             SqlConnection con = new SqlConnection(Helper.ConString);
             con.Open();
             SqlCommand cmd = new SqlCommand(Query,con);
@@ -50,7 +50,7 @@ namespace Student_Registration
         private void btn_del_Click(object sender, EventArgs e)
         {
             string Query = " DELETE FROM tbl_student WHERE Registration ID= '"+cmb_regID.Text+"' ";
-            SqlConnection con = new SqlConnection();
+            SqlConnection con = new SqlConnection(Helper.ConString);
             con.Open();
             SqlCommand cmd = new SqlCommand(Query,con);
             cmd.ExecuteNonQuery();
