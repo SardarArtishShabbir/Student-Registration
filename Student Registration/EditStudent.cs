@@ -25,5 +25,10 @@ namespace Student_Registration
             this.tbl_studentTableAdapter.Fill(this.registerStudentDataSet1.tbl_student);
 
         }
+
+        private void cmb_regID_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string Query = ""SELECT * from tbl_student WHERE RegistrationID='"+cmb_regID+"'"
+        }
     }
 }

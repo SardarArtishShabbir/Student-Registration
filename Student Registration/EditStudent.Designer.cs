@@ -45,7 +45,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.btn_del = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cmb_regID = new System.Windows.Forms.ComboBox();
             this.registerStudentDataSet1 = new Student_Registration.RegisterStudentDataSet1();
             this.tblstudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_studentTableAdapter = new Student_Registration.RegisterStudentDataSet1TableAdapters.tbl_studentTableAdapter();
@@ -192,16 +192,17 @@
             this.btn_del.Text = "Delete";
             this.btn_del.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cmb_regID
             // 
-            this.comboBox1.DataSource = this.tblstudentBindingSource1;
-            this.comboBox1.DisplayMember = "Registration ID";
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(139, 102);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(126, 21);
-            this.comboBox1.TabIndex = 33;
-            this.comboBox1.ValueMember = "Registration ID";
+            this.cmb_regID.DataSource = this.tblstudentBindingSource1;
+            this.cmb_regID.DisplayMember = "Registration ID";
+            this.cmb_regID.FormattingEnabled = true;
+            this.cmb_regID.Location = new System.Drawing.Point(139, 102);
+            this.cmb_regID.Name = "cmb_regID";
+            this.cmb_regID.Size = new System.Drawing.Size(126, 21);
+            this.cmb_regID.TabIndex = 33;
+            this.cmb_regID.ValueMember = "Registration ID";
+            this.cmb_regID.SelectedIndexChanged += new System.EventHandler(this.cmb_regID_SelectedIndexChanged);
             // 
             // registerStudentDataSet1
             // 
@@ -236,7 +237,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(346, 474);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cmb_regID);
             this.Controls.Add(this.btn_del);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btn_update);
@@ -283,7 +284,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btn_del;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cmb_regID;
         private RegisterStudentDataSet1 registerStudentDataSet1;
         private System.Windows.Forms.BindingSource tblstudentBindingSource;
         private RegisterStudentDataSet1TableAdapters.tbl_studentTableAdapter tbl_studentTableAdapter;
