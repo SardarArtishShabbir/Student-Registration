@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http.Headers;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using HelperSpace;
 namespace Student_Registration
 {
     public partial class EditStudent : Form
@@ -28,7 +30,32 @@ namespace Student_Registration
 
         private void cmb_regID_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string Query = ""SELECT * from tbl_student WHERE RegistrationID='"+cmb_regID+"'"
+            string Query = "SELECT * from tbl_student WHERE Registration ID= '"+cmb_regID.Text+"' ";
+            SqlConnection con = new SqlConnection(Helper.ConString);
+            con.Open();
+            SqlCommand cmd = new SqlCommand(Query,con);
+           SqlDataReader dr = cmd.ExecuteReader();
+            if (dr.Read())
+            {
+                txt_name.Text = dr["Name"].ToString();
+                txt_fname.Text = dr["FatherName"].ToString();
+                txt_mobile.Text = dr["Mobile"].ToString();
+                txt_Rno.Text = dr["RNo"].ToString();
+                txt_address.Text = dr["Address"].ToString();
+                txt_email.Text = dr["Email"].ToString();
+               
+            }
+        }
+
+        private void btn_del_Click(object sender, EventArgs e)
+        {
+            string Query = " DELETE FROM tbl_student WHERE Registration ID= '"+cmb_regID.Text+"' ";
+            SqlConnection con = new SqlConnection();
+            con.Open();
+            SqlCommand cmd = new SqlCommand(Query,con);
+            cmd.ExecuteNonQuery();
+            Helper.Clear(this);
+            MessageBox.Show("Data Deleted Successfully!");
         }
     }
 }

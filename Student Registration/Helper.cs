@@ -5,6 +5,7 @@ namespace HelperSpace
 {
     public static class Helper
     {
+        public static string ConString = System.Configuration.ConfigurationManager.ConnectionStrings["myConString"].ToString();
         public static void Clear(Form form)
         {
             foreach (var item in form.Controls)

@@ -13,7 +13,7 @@ namespace Student_Registration
 {
     public partial class Form1 : Form
     {
-        string ConString = System.Configuration.ConfigurationManager.ConnectionStrings["myConString"].ToString();
+        //string ConString = System.Configuration.ConfigurationManager.ConnectionStrings["myConString"].ToString();
         public Form1()
         {
             InitializeComponent();
@@ -29,7 +29,7 @@ namespace Student_Registration
         private void btn_save_Click(object sender, EventArgs e)
         {
             string sqlQuery = "INSERT INTO tbl_student VALUES('"+txt_reg.Text+"','"+txt_name.Text+"','"+txt_fname.Text+"','"+txt_mobile.Text+"','"+txt_Rno.Text+"','"+txt_address.Text+"','"+txt_email.Text+"')";
-            SqlConnection con = new SqlConnection(ConString);
+            SqlConnection con = new SqlConnection(Helper.ConString);
             con.Open();
             SqlCommand cmd = new SqlCommand(sqlQuery, con);
             cmd.ExecuteNonQuery();

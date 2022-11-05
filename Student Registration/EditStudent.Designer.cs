@@ -46,16 +46,16 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btn_del = new System.Windows.Forms.Button();
             this.cmb_regID = new System.Windows.Forms.ComboBox();
+            this.tblstudentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.registerStudentDataSet2 = new Student_Registration.RegisterStudentDataSet2();
             this.registerStudentDataSet1 = new Student_Registration.RegisterStudentDataSet1();
             this.tblstudentBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_studentTableAdapter = new Student_Registration.RegisterStudentDataSet1TableAdapters.tbl_studentTableAdapter();
-            this.registerStudentDataSet2 = new Student_Registration.RegisterStudentDataSet2();
-            this.tblstudentBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.tbl_studentTableAdapter1 = new Student_Registration.RegisterStudentDataSet2TableAdapters.tbl_studentTableAdapter();
+            ((System.ComponentModel.ISupportInitialize)(this.tblstudentBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registerStudentDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.registerStudentDataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblstudentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registerStudentDataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblstudentBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_update
@@ -191,6 +191,7 @@
             this.btn_del.TabIndex = 32;
             this.btn_del.Text = "Delete";
             this.btn_del.UseVisualStyleBackColor = true;
+            this.btn_del.Click += new System.EventHandler(this.btn_del_Click);
             // 
             // cmb_regID
             // 
@@ -203,6 +204,16 @@
             this.cmb_regID.TabIndex = 33;
             this.cmb_regID.ValueMember = "Registration ID";
             this.cmb_regID.SelectedIndexChanged += new System.EventHandler(this.cmb_regID_SelectedIndexChanged);
+            // 
+            // tblstudentBindingSource1
+            // 
+            this.tblstudentBindingSource1.DataMember = "tbl_student";
+            this.tblstudentBindingSource1.DataSource = this.registerStudentDataSet2;
+            // 
+            // registerStudentDataSet2
+            // 
+            this.registerStudentDataSet2.DataSetName = "RegisterStudentDataSet2";
+            this.registerStudentDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // registerStudentDataSet1
             // 
@@ -217,16 +228,6 @@
             // tbl_studentTableAdapter
             // 
             this.tbl_studentTableAdapter.ClearBeforeFill = true;
-            // 
-            // registerStudentDataSet2
-            // 
-            this.registerStudentDataSet2.DataSetName = "RegisterStudentDataSet2";
-            this.registerStudentDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tblstudentBindingSource1
-            // 
-            this.tblstudentBindingSource1.DataMember = "tbl_student";
-            this.tblstudentBindingSource1.DataSource = this.registerStudentDataSet2;
             // 
             // tbl_studentTableAdapter1
             // 
@@ -257,10 +258,10 @@
             this.Name = "EditStudent";
             this.Text = "EditStudent";
             this.Load += new System.EventHandler(this.EditStudent_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.tblstudentBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.registerStudentDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.registerStudentDataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tblstudentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.registerStudentDataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tblstudentBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
