@@ -49,13 +49,17 @@ namespace Student_Registration
 
         private void btn_del_Click(object sender, EventArgs e)
         {
-            string Query = " DELETE FROM tbl_student WHERE [Registration ID]= '"+cmb_regID.Text+"' ";
-            SqlConnection con = new SqlConnection(Helper.ConString);
-            con.Open();
-            SqlCommand cmd = new SqlCommand(Query,con);
-            cmd.ExecuteNonQuery();
-            Helper.Clear(this);
-            MessageBox.Show("Data Deleted Successfully!");
+            DialogResult dr = MessageBox.Show("Are you sure you want to delete this record?","Alert",MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                string Query = " DELETE FROM tbl_student WHERE [Registration ID]= '" + cmb_regID.Text + "' ";
+                SqlConnection con = new SqlConnection(Helper.ConString);
+                con.Open();
+                SqlCommand cmd = new SqlCommand(Query, con);
+                cmd.ExecuteNonQuery();
+                Helper.Clear(this);
+                MessageBox.Show("Data Deleted Successfully!");
+            }
         }
 
         private void btn_update_Click(object sender, EventArgs e)
